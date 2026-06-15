@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Goonj - Timeless Indian Jewellery</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&family=Lora:wght@400;500&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -13,99 +14,146 @@
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
-            background: #ffffff;
-            color: #1a1a1a;
+            font-family: 'Poppins', sans-serif;
+            background: #0f0f0f;
+            color: #f5f1e8;
+            line-height: 1.6;
         }
 
-        button {
-            cursor: pointer;
-            transition: all 0.2s ease;
-        }
-
-        button:active {
-            transform: scale(0.98);
-        }
-
-        a {
-            color: inherit;
-            text-decoration: none;
+        /* Scroll behavior */
+        html {
+            scroll-behavior: smooth;
         }
 
         /* Header Section */
         .header {
-            background: linear-gradient(135deg, #f5f5f5, #ffffff);
-            padding: 2rem 1rem;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2416 100%);
+            padding: 3rem 1.5rem 2rem;
             text-align: center;
-            border-bottom: 2px solid #e0e0e0;
+            border-bottom: 2px solid #c9a961;
+            position: relative;
+            overflow: hidden;
         }
 
-        .logo img {
-            height: 60px;
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #c9a961, transparent);
+        }
+
+        .logo-container {
+            margin-bottom: 1.5rem;
+            animation: fadeInDown 0.8s ease;
+        }
+
+        .logo-container img {
+            height: 70px;
             width: auto;
-            display: inline-block;
-            margin-bottom: 12px;
+            filter: drop-shadow(0 4px 8px rgba(201, 169, 97, 0.2));
         }
 
         .header h1 {
-            font-size: 28px;
-            font-weight: 500;
-            color: #1a1a1a;
-            margin: 0 0 8px;
-            letter-spacing: 0.5px;
+            font-family: 'Playfair Display', serif;
+            font-size: 48px;
+            font-weight: 700;
+            color: #c9a961;
+            margin: 0 0 10px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
         }
 
         .header .tagline {
-            font-size: 14px;
-            color: #666666;
+            font-family: 'Lora', serif;
+            font-size: 16px;
+            color: #d4c5b5;
             margin: 0;
-            line-height: 1.6;
+            font-weight: 300;
+            letter-spacing: 0.5px;
         }
 
         .header .subtitle {
-            font-size: 13px;
-            color: #999999;
-            margin: 8px 0 0;
+            font-size: 12px;
+            color: #a89968;
+            margin: 12px 0 0;
             font-style: italic;
+            letter-spacing: 1px;
+        }
+
+        /* Divider */
+        .divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #c9a961, transparent);
+            margin: 2rem 0;
         }
 
         /* Quick Actions */
         .quick-actions {
-            padding: 1.5rem 1rem;
+            padding: 2rem 1rem;
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 10px;
+            gap: 12px;
+            background: linear-gradient(135deg, rgba(201, 169, 97, 0.05) 0%, transparent 100%);
         }
 
         .btn {
-            padding: 12px;
-            border-radius: 8px;
+            padding: 14px 16px;
+            border-radius: 10px;
             font-weight: 500;
             font-size: 14px;
-            border: none;
+            border: 1.5px solid;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 6px;
+            gap: 8px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-family: 'Poppins', sans-serif;
         }
 
         .btn-website {
-            background: #e3f2fd;
-            color: #1976d2;
+            background: rgba(201, 169, 97, 0.15);
+            border-color: #c9a961;
+            color: #c9a961;
+        }
+
+        .btn-website:hover {
+            background: #c9a961;
+            color: #0f0f0f;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px rgba(201, 169, 97, 0.2);
         }
 
         .btn-whatsapp {
-            background: #e8f5e9;
-            color: #388e3c;
+            background: rgba(76, 175, 80, 0.15);
+            border-color: #4caf50;
+            color: #4caf50;
+        }
+
+        .btn-whatsapp:hover {
+            background: #4caf50;
+            color: #fff;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px rgba(76, 175, 80, 0.2);
         }
 
         .btn-instagram {
-            background: #fff3e0;
-            color: #f57c00;
-        }
-
-        .btn-instagram {
+            background: rgba(201, 169, 97, 0.15);
+            border-color: #c9a961;
+            color: #c9a961;
             grid-column: 1/-1;
+        }
+
+        .btn-instagram:hover {
+            background: #c9a961;
+            color: #0f0f0f;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px rgba(201, 169, 97, 0.2);
         }
 
         .btn i {
@@ -114,161 +162,277 @@
 
         /* Section */
         .section {
-            padding: 1.5rem 1rem;
-            border-top: 0.5px solid #e0e0e0;
+            padding: 2.5rem 1.5rem;
+            border-top: 1px solid rgba(201, 169, 97, 0.2);
+        }
+
+        .section:nth-child(even) {
+            background: rgba(201, 169, 97, 0.03);
         }
 
         .section h2 {
-            font-size: 16px;
-            font-weight: 500;
-            color: #1a1a1a;
-            margin: 0 0 12px;
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            font-weight: 700;
+            color: #c9a961;
+            margin: 0 0 1.5rem;
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 12px;
+            letter-spacing: 1px;
         }
 
         .section h2 i {
-            color: #1976d2;
+            font-size: 24px;
         }
 
         /* Products Grid */
         .products-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 10px;
+            gap: 16px;
         }
 
         .product-card {
-            background: #f5f5f5;
-            padding: 12px;
-            border-radius: 8px;
+            background: linear-gradient(135deg, rgba(201, 169, 97, 0.1) 0%, transparent 100%);
+            padding: 24px 16px;
+            border-radius: 12px;
             text-align: center;
-            border: 0.5px solid #e0e0e0;
+            border: 1.5px solid rgba(201, 169, 97, 0.3);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #c9a961, transparent);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .product-card:hover {
+            border-color: #c9a961;
+            background: linear-gradient(135deg, rgba(201, 169, 97, 0.2) 0%, transparent 100%);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(201, 169, 97, 0.15);
+        }
+
+        .product-card:hover::before {
+            opacity: 1;
         }
 
         .product-card i {
-            font-size: 24px;
-            margin-bottom: 4px;
-            color: #1976d2;
+            font-size: 32px;
+            margin-bottom: 12px;
+            color: #c9a961;
+            transition: all 0.3s ease;
+        }
+
+        .product-card:hover i {
+            transform: scale(1.1) rotate(5deg);
         }
 
         .product-card p {
-            font-size: 13px;
+            font-size: 14px;
             font-weight: 500;
-            color: #1a1a1a;
+            color: #f5f1e8;
             margin: 0;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
         }
 
         /* Benefits */
         .benefits {
             display: flex;
             flex-direction: column;
-            gap: 10px;
+            gap: 16px;
         }
 
         .benefit-item {
             display: flex;
-            gap: 10px;
+            gap: 16px;
             align-items: flex-start;
+            padding: 16px;
+            background: rgba(201, 169, 97, 0.08);
+            border-radius: 10px;
+            border-left: 3px solid #c9a961;
+            transition: all 0.3s ease;
+        }
+
+        .benefit-item:hover {
+            background: rgba(201, 169, 97, 0.15);
+            transform: translateX(4px);
         }
 
         .benefit-icon {
-            color: #1976d2;
-            font-weight: 500;
-            font-size: 14px;
+            color: #c9a961;
+            font-weight: 600;
+            font-size: 18px;
             flex-shrink: 0;
             margin-top: 2px;
         }
 
         .benefit-title {
-            font-size: 13px;
-            font-weight: 500;
-            color: #1a1a1a;
-            margin: 0;
+            font-size: 14px;
+            font-weight: 600;
+            color: #c9a961;
+            margin: 0 0 4px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
         .benefit-desc {
-            font-size: 12px;
-            color: #666666;
+            font-size: 13px;
+            color: #b5a89a;
             margin: 0;
+            line-height: 1.5;
         }
 
         /* Contact */
         .contact-list {
             display: flex;
             flex-direction: column;
-            gap: 10px;
-            font-size: 13px;
+            gap: 16px;
         }
 
         .contact-item {
             display: flex;
-            gap: 10px;
+            gap: 16px;
             align-items: center;
+            padding: 16px;
+            background: linear-gradient(135deg, rgba(201, 169, 97, 0.08) 0%, transparent 100%);
+            border-radius: 10px;
+            border: 1px solid rgba(201, 169, 97, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .contact-item:hover {
+            border-color: #c9a961;
+            background: linear-gradient(135deg, rgba(201, 169, 97, 0.15) 0%, transparent 100%);
         }
 
         .contact-icon {
-            font-size: 16px;
-            color: #666666;
+            font-size: 20px;
+            color: #c9a961;
             flex-shrink: 0;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(201, 169, 97, 0.1);
+            border-radius: 8px;
         }
 
         .contact-label {
-            color: #666666;
+            color: #a89968;
             margin: 0;
-            font-size: 12px;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
         .contact-value {
-            color: #1a1a1a;
+            color: #f5f1e8;
             margin: 0;
             font-weight: 500;
         }
 
         /* Social Links */
         .social-links {
-            padding: 1.5rem 1rem;
-            border-top: 0.5px solid #e0e0e0;
+            padding: 2rem 1.5rem;
             display: flex;
             justify-content: center;
-            gap: 16px;
+            gap: 24px;
+            background: linear-gradient(135deg, rgba(201, 169, 97, 0.05) 0%, transparent 100%);
+            border-top: 1px solid rgba(201, 169, 97, 0.2);
+            border-bottom: 1px solid rgba(201, 169, 97, 0.2);
         }
 
         .social-links a {
-            font-size: 20px;
-            color: #666666;
+            font-size: 24px;
+            color: #a89968;
             cursor: pointer;
-            transition: color 0.2s;
+            transition: all 0.3s ease;
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1.5px solid rgba(201, 169, 97, 0.3);
+            border-radius: 50%;
         }
 
         .social-links a:hover {
-            color: #1976d2;
+            color: #fff;
+            border-color: #c9a961;
+            background: rgba(201, 169, 97, 0.2);
+            transform: translateY(-4px);
         }
 
         /* Footer */
         .footer {
-            padding: 1.5rem 1rem;
-            border-top: 0.5px solid #e0e0e0;
-            background: #f5f5f5;
+            padding: 2rem 1.5rem;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2416 100%);
             text-align: center;
+            border-top: 2px solid #c9a961;
+            position: relative;
+        }
+
+        .footer::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #c9a961, transparent);
         }
 
         .footer p {
             font-size: 12px;
-            color: #666666;
+            color: #a89968;
             margin: 0;
-            line-height: 1.6;
+            line-height: 1.8;
+            letter-spacing: 0.5px;
         }
 
         .footer i {
-            color: #f57c00;
-            font-size: 10px;
-            margin: 0 2px;
+            color: #c9a961;
+            font-size: 12px;
+            margin: 0 4px;
+        }
+
+        /* Animations */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         /* Responsive */
         @media (max-width: 480px) {
+            .header h1 {
+                font-size: 36px;
+                letter-spacing: 1px;
+            }
+
+            .section h2 {
+                font-size: 24px;
+            }
+
             .quick-actions {
                 grid-template-columns: 1fr;
             }
@@ -276,71 +440,13 @@
             .btn-instagram {
                 grid-column: 1;
             }
-        }
 
-        @media (prefers-color-scheme: dark) {
-            body {
-                background: #1a1a1a;
-                color: #ffffff;
-            }
-
-            .header {
-                background: linear-gradient(135deg, #2a2a2a, #1a1a1a);
-                border-bottom-color: #333333;
-            }
-
-            .header h1 {
-                color: #ffffff;
-            }
-
-            .header .tagline {
-                color: #cccccc;
-            }
-
-            .header .subtitle {
-                color: #999999;
-            }
-
-            .section {
-                border-top-color: #333333;
-            }
-
-            .section h2 {
-                color: #ffffff;
-            }
-
-            .product-card {
-                background: #2a2a2a;
-                border-color: #333333;
-            }
-
-            .product-card p {
-                color: #ffffff;
-            }
-
-            .benefit-title {
-                color: #ffffff;
-            }
-
-            .contact-value {
-                color: #ffffff;
+            .products-grid {
+                grid-template-columns: 1fr;
             }
 
             .social-links {
-                border-top-color: #333333;
-            }
-
-            .social-links a {
-                color: #999999;
-            }
-
-            .social-links a:hover {
-                color: #90caf9;
-            }
-
-            .footer {
-                background: #2a2a2a;
-                border-top-color: #333333;
+                gap: 16px;
             }
         }
     </style>
@@ -349,12 +455,12 @@
 
     <!-- Header Hero Section with Logo -->
     <div class="header">
-        <div class="logo">
+        <div class="logo-container">
             <img src="https://raw.githubusercontent.com/goonjjewels/goonjjewels-old/2bc8c564349baa8731d313d15e8c5982f1945b79/logodv.svg?token=BR5PHIS4UMGFIM2Y25XJP3TKGBCQO" alt="Goonj Jewels Logo">
         </div>
         <h1>Goonj</h1>
-        <p class="tagline">Timeless handcrafted jewellery rooted in Indian heritage</p>
-        <p class="subtitle">Every piece tells a story worth wearing</p>
+        <p class="tagline">Timeless Handcrafted Jewellery</p>
+        <p class="subtitle">Rooted in Indian Heritage • Every Story Worth Wearing</p>
     </div>
 
     <!-- Quick Action Buttons -->
@@ -389,11 +495,11 @@
                 <p>Rings</p>
             </div>
             <div class="product-card">
-                <i class="fas fa-ankh"></i>
+                <i class="fas fa-crown"></i>
                 <p>Anklets</p>
             </div>
             <div class="product-card">
-                <i class="fas fa-circle"></i>
+                <i class="fas fa-circle-notch"></i>
                 <p>Bangles</p>
             </div>
             <div class="product-card">
@@ -406,28 +512,28 @@
     <!-- Benefits Section -->
     <div class="section">
         <h2>
-            <i class="fas fa-check-circle"></i> Why Choose Us?
+            <i class="fas fa-check-circle"></i> Why Choose Us
         </h2>
         <div class="benefits">
             <div class="benefit-item">
                 <i class="fas fa-check benefit-icon"></i>
                 <div>
                     <p class="benefit-title">Free Returns</p>
-                    <p class="benefit-desc">Easy 30-day return policy</p>
+                    <p class="benefit-desc">Easy 30-day return policy with no questions asked</p>
                 </div>
             </div>
             <div class="benefit-item">
                 <i class="fas fa-check benefit-icon"></i>
                 <div>
                     <p class="benefit-title">Secure Payment</p>
-                    <p class="benefit-desc">Protected transactions & encrypted checkout</p>
+                    <p class="benefit-desc">Protected transactions & encrypted checkout with multiple payment options</p>
                 </div>
             </div>
             <div class="benefit-item">
                 <i class="fas fa-check benefit-icon"></i>
                 <div>
                     <p class="benefit-title">COD Available</p>
-                    <p class="benefit-desc">Cash on delivery option</p>
+                    <p class="benefit-desc">Cash on delivery option for your convenience and peace of mind</p>
                 </div>
             </div>
         </div>
@@ -440,21 +546,27 @@
         </h2>
         <div class="contact-list">
             <div class="contact-item">
-                <i class="fas fa-map-pin contact-icon"></i>
+                <div class="contact-icon">
+                    <i class="fas fa-map-pin"></i>
+                </div>
                 <div>
                     <p class="contact-label">Location</p>
                     <p class="contact-value">Gwalior, Madhya Pradesh</p>
                 </div>
             </div>
             <div class="contact-item">
-                <i class="fas fa-envelope contact-icon"></i>
+                <div class="contact-icon">
+                    <i class="fas fa-envelope"></i>
+                </div>
                 <div>
                     <p class="contact-label">Email</p>
                     <p class="contact-value">hello@goonjjewels.in</p>
                 </div>
             </div>
             <div class="contact-item">
-                <i class="fas fa-phone contact-icon"></i>
+                <div class="contact-icon">
+                    <i class="fas fa-phone"></i>
+                </div>
                 <div>
                     <p class="contact-label">Phone</p>
                     <p class="contact-value">+91 98765 43210</p>
@@ -465,20 +577,21 @@
 
     <!-- Social Links -->
     <div class="social-links">
-        <a onclick="window.open('https://instagram.com/goonjjewels', '_blank')">
+        <a onclick="window.open('https://instagram.com/goonjjewels', '_blank')" title="Instagram">
             <i class="fab fa-instagram"></i>
         </a>
-        <a onclick="window.open('https://wa.me/919876543210', '_blank')">
+        <a onclick="window.open('https://wa.me/919876543210', '_blank')" title="WhatsApp">
             <i class="fab fa-whatsapp"></i>
         </a>
-        <a onclick="window.open('https://goonjjewels.in', '_blank')">
+        <a onclick="window.open('https://goonjjewels.in', '_blank')" title="Website">
             <i class="fas fa-globe"></i>
         </a>
     </div>
 
     <!-- Footer -->
     <div class="footer">
-        <p>Handcrafted with <i class="fas fa-heart"></i> in Gwalior<br/>© 2026 Goonj Jewellery. All rights reserved.</p>
+        <p>Handcrafted with <i class="fas fa-heart"></i> in Gwalior</p>
+        <p>© 2026 Goonj Jewellery. All rights reserved.</p>
     </div>
 
 </body>
