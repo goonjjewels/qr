@@ -1,1 +1,485 @@
-hi
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Goonj - Timeless Indian Jewellery</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
+            background: #ffffff;
+            color: #1a1a1a;
+        }
+
+        button {
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        button:active {
+            transform: scale(0.98);
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        /* Header Section */
+        .header {
+            background: linear-gradient(135deg, #f5f5f5, #ffffff);
+            padding: 2rem 1rem;
+            text-align: center;
+            border-bottom: 2px solid #e0e0e0;
+        }
+
+        .logo img {
+            height: 60px;
+            width: auto;
+            display: inline-block;
+            margin-bottom: 12px;
+        }
+
+        .header h1 {
+            font-size: 28px;
+            font-weight: 500;
+            color: #1a1a1a;
+            margin: 0 0 8px;
+            letter-spacing: 0.5px;
+        }
+
+        .header .tagline {
+            font-size: 14px;
+            color: #666666;
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        .header .subtitle {
+            font-size: 13px;
+            color: #999999;
+            margin: 8px 0 0;
+            font-style: italic;
+        }
+
+        /* Quick Actions */
+        .quick-actions {
+            padding: 1.5rem 1rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+
+        .btn {
+            padding: 12px;
+            border-radius: 8px;
+            font-weight: 500;
+            font-size: 14px;
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+        }
+
+        .btn-website {
+            background: #e3f2fd;
+            color: #1976d2;
+        }
+
+        .btn-whatsapp {
+            background: #e8f5e9;
+            color: #388e3c;
+        }
+
+        .btn-instagram {
+            background: #fff3e0;
+            color: #f57c00;
+        }
+
+        .btn-instagram {
+            grid-column: 1/-1;
+        }
+
+        .btn i {
+            font-size: 16px;
+        }
+
+        /* Section */
+        .section {
+            padding: 1.5rem 1rem;
+            border-top: 0.5px solid #e0e0e0;
+        }
+
+        .section h2 {
+            font-size: 16px;
+            font-weight: 500;
+            color: #1a1a1a;
+            margin: 0 0 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .section h2 i {
+            color: #1976d2;
+        }
+
+        /* Products Grid */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+
+        .product-card {
+            background: #f5f5f5;
+            padding: 12px;
+            border-radius: 8px;
+            text-align: center;
+            border: 0.5px solid #e0e0e0;
+        }
+
+        .product-card i {
+            font-size: 24px;
+            margin-bottom: 4px;
+            color: #1976d2;
+        }
+
+        .product-card p {
+            font-size: 13px;
+            font-weight: 500;
+            color: #1a1a1a;
+            margin: 0;
+        }
+
+        /* Benefits */
+        .benefits {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .benefit-item {
+            display: flex;
+            gap: 10px;
+            align-items: flex-start;
+        }
+
+        .benefit-icon {
+            color: #1976d2;
+            font-weight: 500;
+            font-size: 14px;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .benefit-title {
+            font-size: 13px;
+            font-weight: 500;
+            color: #1a1a1a;
+            margin: 0;
+        }
+
+        .benefit-desc {
+            font-size: 12px;
+            color: #666666;
+            margin: 0;
+        }
+
+        /* Contact */
+        .contact-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            font-size: 13px;
+        }
+
+        .contact-item {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .contact-icon {
+            font-size: 16px;
+            color: #666666;
+            flex-shrink: 0;
+        }
+
+        .contact-label {
+            color: #666666;
+            margin: 0;
+            font-size: 12px;
+        }
+
+        .contact-value {
+            color: #1a1a1a;
+            margin: 0;
+            font-weight: 500;
+        }
+
+        /* Social Links */
+        .social-links {
+            padding: 1.5rem 1rem;
+            border-top: 0.5px solid #e0e0e0;
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+        }
+
+        .social-links a {
+            font-size: 20px;
+            color: #666666;
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+
+        .social-links a:hover {
+            color: #1976d2;
+        }
+
+        /* Footer */
+        .footer {
+            padding: 1.5rem 1rem;
+            border-top: 0.5px solid #e0e0e0;
+            background: #f5f5f5;
+            text-align: center;
+        }
+
+        .footer p {
+            font-size: 12px;
+            color: #666666;
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        .footer i {
+            color: #f57c00;
+            font-size: 10px;
+            margin: 0 2px;
+        }
+
+        /* Responsive */
+        @media (max-width: 480px) {
+            .quick-actions {
+                grid-template-columns: 1fr;
+            }
+
+            .btn-instagram {
+                grid-column: 1;
+            }
+        }
+
+        @media (prefers-color-scheme: dark) {
+            body {
+                background: #1a1a1a;
+                color: #ffffff;
+            }
+
+            .header {
+                background: linear-gradient(135deg, #2a2a2a, #1a1a1a);
+                border-bottom-color: #333333;
+            }
+
+            .header h1 {
+                color: #ffffff;
+            }
+
+            .header .tagline {
+                color: #cccccc;
+            }
+
+            .header .subtitle {
+                color: #999999;
+            }
+
+            .section {
+                border-top-color: #333333;
+            }
+
+            .section h2 {
+                color: #ffffff;
+            }
+
+            .product-card {
+                background: #2a2a2a;
+                border-color: #333333;
+            }
+
+            .product-card p {
+                color: #ffffff;
+            }
+
+            .benefit-title {
+                color: #ffffff;
+            }
+
+            .contact-value {
+                color: #ffffff;
+            }
+
+            .social-links {
+                border-top-color: #333333;
+            }
+
+            .social-links a {
+                color: #999999;
+            }
+
+            .social-links a:hover {
+                color: #90caf9;
+            }
+
+            .footer {
+                background: #2a2a2a;
+                border-top-color: #333333;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Hero Section with Logo -->
+    <div class="header">
+        <div class="logo">
+            <img src="https://raw.githubusercontent.com/goonjjewels/goonjjewels-old/2bc8c564349baa8731d313d15e8c5982f1945b79/logodv.svg?token=BR5PHIS4UMGFIM2Y25XJP3TKGBCQO" alt="Goonj Jewels Logo">
+        </div>
+        <h1>Goonj</h1>
+        <p class="tagline">Timeless handcrafted jewellery rooted in Indian heritage</p>
+        <p class="subtitle">Every piece tells a story worth wearing</p>
+    </div>
+
+    <!-- Quick Action Buttons -->
+    <div class="quick-actions">
+        <button class="btn btn-website" onclick="window.open('https://goonjjewels.in', '_blank')">
+            <i class="fas fa-globe"></i> Website
+        </button>
+        <button class="btn btn-whatsapp" onclick="window.open('https://wa.me/919876543210?text=Hello%20Goonj%20Jewels', '_blank')">
+            <i class="fab fa-whatsapp"></i> WhatsApp
+        </button>
+        <button class="btn btn-instagram" onclick="window.open('https://instagram.com/goonjjewels', '_blank')">
+            <i class="fab fa-instagram"></i> Follow on Instagram
+        </button>
+    </div>
+
+    <!-- Products Section -->
+    <div class="section">
+        <h2>
+            <i class="fas fa-sparkles"></i> Our Collections
+        </h2>
+        <div class="products-grid">
+            <div class="product-card">
+                <i class="fas fa-ring"></i>
+                <p>Earrings</p>
+            </div>
+            <div class="product-card">
+                <i class="fas fa-gem"></i>
+                <p>Necklaces</p>
+            </div>
+            <div class="product-card">
+                <i class="fas fa-ring"></i>
+                <p>Rings</p>
+            </div>
+            <div class="product-card">
+                <i class="fas fa-ankh"></i>
+                <p>Anklets</p>
+            </div>
+            <div class="product-card">
+                <i class="fas fa-circle"></i>
+                <p>Bangles</p>
+            </div>
+            <div class="product-card">
+                <i class="fas fa-gift"></i>
+                <p>Combo Sets</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Benefits Section -->
+    <div class="section">
+        <h2>
+            <i class="fas fa-check-circle"></i> Why Choose Us?
+        </h2>
+        <div class="benefits">
+            <div class="benefit-item">
+                <i class="fas fa-check benefit-icon"></i>
+                <div>
+                    <p class="benefit-title">Free Returns</p>
+                    <p class="benefit-desc">Easy 30-day return policy</p>
+                </div>
+            </div>
+            <div class="benefit-item">
+                <i class="fas fa-check benefit-icon"></i>
+                <div>
+                    <p class="benefit-title">Secure Payment</p>
+                    <p class="benefit-desc">Protected transactions & encrypted checkout</p>
+                </div>
+            </div>
+            <div class="benefit-item">
+                <i class="fas fa-check benefit-icon"></i>
+                <div>
+                    <p class="benefit-title">COD Available</p>
+                    <p class="benefit-desc">Cash on delivery option</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Section -->
+    <div class="section">
+        <h2>
+            <i class="fas fa-envelope"></i> Get in Touch
+        </h2>
+        <div class="contact-list">
+            <div class="contact-item">
+                <i class="fas fa-map-pin contact-icon"></i>
+                <div>
+                    <p class="contact-label">Location</p>
+                    <p class="contact-value">Gwalior, Madhya Pradesh</p>
+                </div>
+            </div>
+            <div class="contact-item">
+                <i class="fas fa-envelope contact-icon"></i>
+                <div>
+                    <p class="contact-label">Email</p>
+                    <p class="contact-value">hello@goonjjewels.in</p>
+                </div>
+            </div>
+            <div class="contact-item">
+                <i class="fas fa-phone contact-icon"></i>
+                <div>
+                    <p class="contact-label">Phone</p>
+                    <p class="contact-value">+91 98765 43210</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Social Links -->
+    <div class="social-links">
+        <a onclick="window.open('https://instagram.com/goonjjewels', '_blank')">
+            <i class="fab fa-instagram"></i>
+        </a>
+        <a onclick="window.open('https://wa.me/919876543210', '_blank')">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+        <a onclick="window.open('https://goonjjewels.in', '_blank')">
+            <i class="fas fa-globe"></i>
+        </a>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <p>Handcrafted with <i class="fas fa-heart"></i> in Gwalior<br/>© 2026 Goonj Jewellery. All rights reserved.</p>
+    </div>
+
+</body>
+</html>
