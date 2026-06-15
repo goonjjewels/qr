@@ -55,14 +55,33 @@
         }
 
         .logo-container {
-            margin-bottom: 1.5rem;
+            margin-bottom: 2rem;
             animation: fadeInDown 0.8s ease;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .logo-bg {
+            width: 140px;
+            height: 140px;
+            background: #ffffff;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 8px 24px rgba(212, 165, 116, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .logo-container:hover .logo-bg {
+            box-shadow: 0 12px 32px rgba(212, 165, 116, 0.4);
+            transform: scale(1.08);
         }
 
         .logo-container img {
-            height: 75px;
+            height: 110px;
             width: auto;
-            filter: drop-shadow(0 6px 12px rgba(212, 165, 116, 0.25));
             transition: transform 0.3s ease;
         }
 
@@ -499,7 +518,9 @@
     <!-- Header Hero Section with Logo -->
     <div class="header">
         <div class="logo-container">
-            <img src="https://goonjqr.netlify.app/goonjlogo.svg" alt="Goonj Jewels Logo">
+            <div class="logo-bg">
+                <img src="https://goonjqr.netlify.app/goonjlogo.svg" alt="Goonj Jewels Logo">
+            </div>
         </div>
         <h1>Goonj</h1>
         <p class="tagline">Timeless Handcrafted Jewellery</p>
