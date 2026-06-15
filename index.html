@@ -15,22 +15,21 @@
 
         body {
             font-family: 'Poppins', sans-serif;
-            background: #0f0f0f;
-            color: #f5f1e8;
+            background: #1a1410;
+            color: #f4ede3;
             line-height: 1.6;
         }
 
-        /* Scroll behavior */
         html {
             scroll-behavior: smooth;
         }
 
         /* Header Section */
         .header {
-            background: linear-gradient(135deg, #1a1a1a 0%, #2d2416 100%);
+            background: linear-gradient(135deg, #2a211a 0%, #3d2f25 100%);
             padding: 3rem 1.5rem 2rem;
             text-align: center;
-            border-bottom: 2px solid #c9a961;
+            border-bottom: 3px solid #d4a574;
             position: relative;
             overflow: hidden;
         }
@@ -41,8 +40,18 @@
             top: 0;
             left: 0;
             right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #d4a574, transparent);
+        }
+
+        .header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
             height: 1px;
-            background: linear-gradient(90deg, transparent, #c9a961, transparent);
+            background: linear-gradient(90deg, transparent, #8b6f47, transparent);
         }
 
         .logo-container {
@@ -51,43 +60,42 @@
         }
 
         .logo-container img {
-            height: 70px;
+            height: 75px;
             width: auto;
-            filter: drop-shadow(0 4px 8px rgba(201, 169, 97, 0.2));
+            filter: drop-shadow(0 6px 12px rgba(212, 165, 116, 0.25));
+            transition: transform 0.3s ease;
+        }
+
+        .logo-container:hover img {
+            transform: scale(1.05);
         }
 
         .header h1 {
             font-family: 'Playfair Display', serif;
-            font-size: 48px;
+            font-size: 52px;
             font-weight: 700;
-            color: #c9a961;
+            color: #d4a574;
             margin: 0 0 10px;
-            letter-spacing: 2px;
+            letter-spacing: 3px;
             text-transform: uppercase;
         }
 
         .header .tagline {
             font-family: 'Lora', serif;
             font-size: 16px;
-            color: #d4c5b5;
+            color: #e8d5c4;
             margin: 0;
             font-weight: 300;
-            letter-spacing: 0.5px;
+            letter-spacing: 0.8px;
         }
 
         .header .subtitle {
             font-size: 12px;
-            color: #a89968;
+            color: #b8946f;
             margin: 12px 0 0;
             font-style: italic;
-            letter-spacing: 1px;
-        }
-
-        /* Divider */
-        .divider {
-            height: 1px;
-            background: linear-gradient(90deg, transparent, #c9a961, transparent);
-            margin: 2rem 0;
+            letter-spacing: 1.2px;
+            text-transform: uppercase;
         }
 
         /* Quick Actions */
@@ -96,14 +104,14 @@
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 12px;
-            background: linear-gradient(135deg, rgba(201, 169, 97, 0.05) 0%, transparent 100%);
+            background: linear-gradient(135deg, rgba(212, 165, 116, 0.08) 0%, rgba(139, 111, 71, 0.04) 100%);
         }
 
         .btn {
-            padding: 14px 16px;
-            border-radius: 10px;
-            font-weight: 500;
-            font-size: 14px;
+            padding: 15px 16px;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 13px;
             border: 1.5px solid;
             display: flex;
             align-items: center;
@@ -112,48 +120,48 @@
             transition: all 0.3s ease;
             cursor: pointer;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
+            letter-spacing: 0.6px;
             font-family: 'Poppins', sans-serif;
         }
 
         .btn-website {
-            background: rgba(201, 169, 97, 0.15);
-            border-color: #c9a961;
-            color: #c9a961;
+            background: rgba(212, 165, 116, 0.15);
+            border-color: #d4a574;
+            color: #d4a574;
         }
 
         .btn-website:hover {
-            background: #c9a961;
-            color: #0f0f0f;
-            transform: translateY(-2px);
-            box-shadow: 0 8px 16px rgba(201, 169, 97, 0.2);
+            background: #d4a574;
+            color: #1a1410;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(212, 165, 116, 0.25);
         }
 
         .btn-whatsapp {
             background: rgba(76, 175, 80, 0.15);
             border-color: #4caf50;
-            color: #4caf50;
+            color: #7ed321;
         }
 
         .btn-whatsapp:hover {
             background: #4caf50;
             color: #fff;
-            transform: translateY(-2px);
-            box-shadow: 0 8px 16px rgba(76, 175, 80, 0.2);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(76, 175, 80, 0.25);
         }
 
         .btn-instagram {
-            background: rgba(201, 169, 97, 0.15);
-            border-color: #c9a961;
-            color: #c9a961;
+            background: rgba(212, 165, 116, 0.15);
+            border-color: #d4a574;
+            color: #d4a574;
             grid-column: 1/-1;
         }
 
         .btn-instagram:hover {
-            background: #c9a961;
-            color: #0f0f0f;
-            transform: translateY(-2px);
-            box-shadow: 0 8px 16px rgba(201, 169, 97, 0.2);
+            background: #d4a574;
+            color: #1a1410;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(212, 165, 116, 0.25);
         }
 
         .btn i {
@@ -163,27 +171,29 @@
         /* Section */
         .section {
             padding: 2.5rem 1.5rem;
-            border-top: 1px solid rgba(201, 169, 97, 0.2);
+            border-top: 1px solid rgba(212, 165, 116, 0.15);
+            position: relative;
         }
 
         .section:nth-child(even) {
-            background: rgba(201, 169, 97, 0.03);
+            background: linear-gradient(135deg, rgba(212, 165, 116, 0.05) 0%, transparent 100%);
         }
 
         .section h2 {
             font-family: 'Playfair Display', serif;
-            font-size: 28px;
+            font-size: 32px;
             font-weight: 700;
-            color: #c9a961;
+            color: #d4a574;
             margin: 0 0 1.5rem;
             display: flex;
             align-items: center;
             gap: 12px;
-            letter-spacing: 1px;
+            letter-spacing: 1.5px;
         }
 
         .section h2 i {
-            font-size: 24px;
+            font-size: 28px;
+            color: #d4a574;
         }
 
         /* Products Grid */
@@ -194,12 +204,12 @@
         }
 
         .product-card {
-            background: linear-gradient(135deg, rgba(201, 169, 97, 0.1) 0%, transparent 100%);
-            padding: 24px 16px;
-            border-radius: 12px;
+            background: linear-gradient(135deg, rgba(212, 165, 116, 0.12) 0%, rgba(139, 111, 71, 0.08) 100%);
+            padding: 28px 18px;
+            border-radius: 14px;
             text-align: center;
-            border: 1.5px solid rgba(201, 169, 97, 0.3);
-            transition: all 0.3s ease;
+            border: 1.5px solid rgba(212, 165, 116, 0.35);
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
             cursor: pointer;
             position: relative;
             overflow: hidden;
@@ -209,42 +219,43 @@
             content: '';
             position: absolute;
             top: 0;
-            left: 0;
-            right: 0;
+            left: -100%;
+            width: 100%;
             height: 2px;
-            background: linear-gradient(90deg, transparent, #c9a961, transparent);
-            opacity: 0;
-            transition: opacity 0.3s ease;
+            background: linear-gradient(90deg, transparent, #d4a574, transparent);
+            transition: left 0.4s ease;
         }
 
         .product-card:hover {
-            border-color: #c9a961;
-            background: linear-gradient(135deg, rgba(201, 169, 97, 0.2) 0%, transparent 100%);
-            transform: translateY(-4px);
-            box-shadow: 0 12px 24px rgba(201, 169, 97, 0.15);
+            border-color: #d4a574;
+            background: linear-gradient(135deg, rgba(212, 165, 116, 0.25) 0%, rgba(139, 111, 71, 0.15) 100%);
+            transform: translateY(-6px);
+            box-shadow: 0 15px 30px rgba(212, 165, 116, 0.2);
         }
 
         .product-card:hover::before {
-            opacity: 1;
+            left: 100%;
         }
 
         .product-card i {
-            font-size: 32px;
-            margin-bottom: 12px;
-            color: #c9a961;
-            transition: all 0.3s ease;
+            font-size: 36px;
+            margin-bottom: 14px;
+            color: #d4a574;
+            transition: all 0.4s ease;
+            display: inline-block;
         }
 
         .product-card:hover i {
-            transform: scale(1.1) rotate(5deg);
+            transform: scale(1.15) rotate(8deg);
+            color: #e8d5c4;
         }
 
         .product-card p {
-            font-size: 14px;
-            font-weight: 500;
-            color: #f5f1e8;
+            font-size: 13px;
+            font-weight: 600;
+            color: #e8d5c4;
             margin: 0;
-            letter-spacing: 0.5px;
+            letter-spacing: 0.8px;
             text-transform: uppercase;
         }
 
@@ -252,137 +263,163 @@
         .benefits {
             display: flex;
             flex-direction: column;
-            gap: 16px;
+            gap: 14px;
         }
 
         .benefit-item {
             display: flex;
             gap: 16px;
             align-items: flex-start;
-            padding: 16px;
-            background: rgba(201, 169, 97, 0.08);
-            border-radius: 10px;
-            border-left: 3px solid #c9a961;
+            padding: 18px 16px;
+            background: linear-gradient(135deg, rgba(212, 165, 116, 0.12) 0%, transparent 100%);
+            border-radius: 12px;
+            border-left: 4px solid #d4a574;
             transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .benefit-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: linear-gradient(135deg, rgba(212, 165, 116, 0.05) 0%, transparent 100%);
+            border-radius: 12px;
+            pointer-events: none;
         }
 
         .benefit-item:hover {
-            background: rgba(201, 169, 97, 0.15);
-            transform: translateX(4px);
+            background: linear-gradient(135deg, rgba(212, 165, 116, 0.2) 0%, transparent 100%);
+            transform: translateX(6px);
+            box-shadow: 0 8px 16px rgba(212, 165, 116, 0.12);
         }
 
         .benefit-icon {
-            color: #c9a961;
-            font-weight: 600;
-            font-size: 18px;
+            color: #d4a574;
+            font-weight: 700;
+            font-size: 20px;
             flex-shrink: 0;
             margin-top: 2px;
+            position: relative;
+            z-index: 1;
         }
 
         .benefit-title {
-            font-size: 14px;
-            font-weight: 600;
-            color: #c9a961;
+            font-size: 13px;
+            font-weight: 700;
+            color: #d4a574;
             margin: 0 0 4px;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
+            letter-spacing: 0.7px;
+            position: relative;
+            z-index: 1;
         }
 
         .benefit-desc {
             font-size: 13px;
-            color: #b5a89a;
+            color: #c4b0a0;
             margin: 0;
-            line-height: 1.5;
+            line-height: 1.6;
+            position: relative;
+            z-index: 1;
         }
 
         /* Contact */
         .contact-list {
             display: flex;
             flex-direction: column;
-            gap: 16px;
+            gap: 14px;
         }
 
         .contact-item {
             display: flex;
             gap: 16px;
             align-items: center;
-            padding: 16px;
-            background: linear-gradient(135deg, rgba(201, 169, 97, 0.08) 0%, transparent 100%);
-            border-radius: 10px;
-            border: 1px solid rgba(201, 169, 97, 0.2);
+            padding: 18px;
+            background: linear-gradient(135deg, rgba(212, 165, 116, 0.1) 0%, transparent 100%);
+            border-radius: 12px;
+            border: 1.5px solid rgba(212, 165, 116, 0.25);
             transition: all 0.3s ease;
         }
 
         .contact-item:hover {
-            border-color: #c9a961;
-            background: linear-gradient(135deg, rgba(201, 169, 97, 0.15) 0%, transparent 100%);
+            border-color: #d4a574;
+            background: linear-gradient(135deg, rgba(212, 165, 116, 0.2) 0%, transparent 100%);
+            transform: translateX(4px);
+            box-shadow: 0 8px 16px rgba(212, 165, 116, 0.12);
         }
 
         .contact-icon {
-            font-size: 20px;
-            color: #c9a961;
+            font-size: 22px;
+            color: #f4ede3;
             flex-shrink: 0;
-            width: 40px;
-            height: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: rgba(201, 169, 97, 0.1);
-            border-radius: 8px;
-        }
-
-        .contact-label {
-            color: #a89968;
-            margin: 0;
-            font-size: 11px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .contact-value {
-            color: #f5f1e8;
-            margin: 0;
-            font-weight: 500;
-        }
-
-        /* Social Links */
-        .social-links {
-            padding: 2rem 1.5rem;
-            display: flex;
-            justify-content: center;
-            gap: 24px;
-            background: linear-gradient(135deg, rgba(201, 169, 97, 0.05) 0%, transparent 100%);
-            border-top: 1px solid rgba(201, 169, 97, 0.2);
-            border-bottom: 1px solid rgba(201, 169, 97, 0.2);
-        }
-
-        .social-links a {
-            font-size: 24px;
-            color: #a89968;
-            cursor: pointer;
-            transition: all 0.3s ease;
             width: 48px;
             height: 48px;
             display: flex;
             align-items: center;
             justify-content: center;
-            border: 1.5px solid rgba(201, 169, 97, 0.3);
+            background: linear-gradient(135deg, rgba(212, 165, 116, 0.2) 0%, rgba(212, 165, 116, 0.1) 100%);
+            border-radius: 10px;
+            border: 1px solid rgba(212, 165, 116, 0.3);
+        }
+
+        .contact-label {
+            color: #b8946f;
+            margin: 0;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.6px;
+        }
+
+        .contact-value {
+            color: #e8d5c4;
+            margin: 0;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        /* Social Links */
+        .social-links {
+            padding: 2.5rem 1.5rem;
+            display: flex;
+            justify-content: center;
+            gap: 28px;
+            background: linear-gradient(135deg, rgba(212, 165, 116, 0.08) 0%, transparent 100%);
+            border-top: 1px solid rgba(212, 165, 116, 0.15);
+            border-bottom: 1px solid rgba(212, 165, 116, 0.15);
+        }
+
+        .social-links a {
+            font-size: 24px;
+            color: #b8946f;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 52px;
+            height: 52px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1.5px solid rgba(212, 165, 116, 0.35);
             border-radius: 50%;
+            background: rgba(212, 165, 116, 0.05);
         }
 
         .social-links a:hover {
-            color: #fff;
-            border-color: #c9a961;
-            background: rgba(201, 169, 97, 0.2);
-            transform: translateY(-4px);
+            color: #f4ede3;
+            border-color: #d4a574;
+            background: rgba(212, 165, 116, 0.25);
+            transform: translateY(-5px);
+            box-shadow: 0 12px 24px rgba(212, 165, 116, 0.15);
         }
 
         /* Footer */
         .footer {
-            padding: 2rem 1.5rem;
-            background: linear-gradient(135deg, #1a1a1a 0%, #2d2416 100%);
+            padding: 2.5rem 1.5rem;
+            background: linear-gradient(135deg, #2a211a 0%, #3d2f25 100%);
             text-align: center;
-            border-top: 2px solid #c9a961;
+            border-top: 3px solid #d4a574;
             position: relative;
         }
 
@@ -393,19 +430,24 @@
             left: 0;
             right: 0;
             height: 1px;
-            background: linear-gradient(90deg, transparent, #c9a961, transparent);
+            background: linear-gradient(90deg, transparent, #8b6f47, transparent);
         }
 
         .footer p {
-            font-size: 12px;
-            color: #a89968;
-            margin: 0;
+            font-size: 13px;
+            color: #b8946f;
+            margin: 0 0 6px;
             line-height: 1.8;
             letter-spacing: 0.5px;
+            font-weight: 500;
+        }
+
+        .footer p:last-child {
+            margin: 0;
         }
 
         .footer i {
-            color: #c9a961;
+            color: #d4a574;
             font-size: 12px;
             margin: 0 4px;
         }
@@ -414,7 +456,7 @@
         @keyframes fadeInDown {
             from {
                 opacity: 0;
-                transform: translateY(-20px);
+                transform: translateY(-25px);
             }
             to {
                 opacity: 1;
@@ -425,12 +467,13 @@
         /* Responsive */
         @media (max-width: 480px) {
             .header h1 {
-                font-size: 36px;
-                letter-spacing: 1px;
+                font-size: 38px;
+                letter-spacing: 2px;
             }
 
             .section h2 {
-                font-size: 24px;
+                font-size: 26px;
+                letter-spacing: 1px;
             }
 
             .quick-actions {
@@ -446,7 +489,7 @@
             }
 
             .social-links {
-                gap: 16px;
+                gap: 20px;
             }
         }
     </style>
@@ -456,7 +499,7 @@
     <!-- Header Hero Section with Logo -->
     <div class="header">
         <div class="logo-container">
-            <img src="/goonjlogo.svg" alt="Goonj Jewels Logo">
+            <img src="https://goonjqr.netlify.app/goonjlogo.svg" alt="Goonj Jewels Logo">
         </div>
         <h1>Goonj</h1>
         <p class="tagline">Timeless Handcrafted Jewellery</p>
